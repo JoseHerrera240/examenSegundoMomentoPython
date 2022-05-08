@@ -2,24 +2,26 @@ from http import client
 
 
 class Cliente:
-    def __init__(self,nombre,apellido,cedula,numeroCuenta,saldo):
-        self.nombre = nombre
-        self.apellido = apellido
-        self.cedula = cedula
-        self.numeroCuenta = numeroCuenta
-        self.saldo = saldo
+    def __init__(self):
+        self.nombre = None
+        self.apellido = None
+        self.cedula = None
+        self.numeroCuenta = None
+        self.saldo = None
     def consultarSaldo(self):
-        return print(self.saldo)
-    def ingresar(self,extra):
+        return print(f"Saldo:  {self.saldo}")
+    def ingresar(self):
+        extra = int(input("Ingrese el dinero a ingresar: "))
         ingreso = self.saldo + extra
-        return ingreso
-    def retirar (self, menos):
+        return print(f"Ingresate:  {extra}")
+    def retirar (self):
+        menos = int(input("Ingrese el dinero a retirar: "))
         egreso = self.saldo - menos
-        return egreso
+        return print(f"Retiraste: {menos}")
+    def ingresarCliente(self):
+      self.nombre = input("Ingrese su nombre: ")
+      self.apellido = input("Ingrese su apellido: ")
+      self.cedula = int(input("Ingrese la cedula: "))
+      self.numeroCuenta = int(input("Ingrese el numero de cuenta: "))
+      self.saldo = int(input("Ingrese su saldo: "))  
 
-cliente1 = Cliente("Jose", "Herrera", 1000570051, 580051, 5000)
-print(cliente1.consultarSaldo())
-print(cliente1.ingresar(2000))
-print(cliente1.consultarSaldo())
-print(cliente1.retirar(500))
-print(cliente1.consultarSaldo())

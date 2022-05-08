@@ -32,5 +32,12 @@ class Ciclista:
         self.__pais=pais
     @tiempo.setter
     def tiempo(self,tiempo):   
-            self.__tiempo=tiempo
+        self.__tiempo=tiempo
+
+    def ingresar(self):
+        self.__nombre = input("Ingrese el nombre del ciclista: ")
+        self.__edad =   int(input("Ingrese la edad del ciclista: "))
+        self.__pais =   input("Ingrese el pais del ciclista: ")
+        self.__tiempo = int(input("Ingrese el tiempo que se demoro el ciclista: "))
+
         
